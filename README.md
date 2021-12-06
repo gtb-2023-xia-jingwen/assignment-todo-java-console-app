@@ -15,7 +15,7 @@
 
 ## 技术要求
 
-1. 在代码库的根目录下，可以通过以下方式运行你的 Java Console Application： 
+1. 在代码库的根目录下，可以通过以下方式运行你的 Java Console Application：
    1. `./gradlew run --args "init"`
    1. `./gradlew run --args "list"`
    1. `./gradlew run --args "add foo bar"`
