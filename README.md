@@ -19,6 +19,8 @@
    1. `./gradlew run --args "init"`
    1. `./gradlew run --args "list"`
    1. `./gradlew run --args "add foo bar"`
+1. 如无需传任何参数，请使用以下方式：
+   1. `./gradlew run`
 1. 不允许修改 build.gradle 文件，如有特殊原因，请先跟 coach 进行沟通；
 1. 不允许以任何形式自行添加任何其它第三方依赖或库带代码库中；
 1. 如需在磁盘上保存任何数据，请确保符合以下要求：
@@ -51,7 +53,8 @@
 Assignment 的目的是学以致用，在运用当前 step 所学的知识和技能合理完成题目要求的前提下，你 应该/可能 会使用（但不限于）以下内容：
 
 1. 使用 CLI git 完成本地的提交管理及与远端的各种同步操作；
-1. 在 Java 中如何获取用户的 $HOME 目录位置；
+1. 在 Java 中 [如何](https://stackoverflow.com/a/586345) 获取用户的 $HOME 目录位置；
+1. 在 Java 中对文件路径进行操作推荐使用 [Path API](https://www.novixys.com/blog/java-path-api-tutorial/) ；
 1. Java 的基础语法
    1. if/for 等控制语句
    1. 创建文件夹及文件
