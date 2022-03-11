@@ -18,7 +18,11 @@
 1. 在代码库的根目录下，可以通过以下方式运行你的 Java Console Application：
    1. `./gradlew run --args "init"`
    1. `./gradlew run --args "list"`
-   1. `./gradlew run --args "add foo bar"`
+   1. `./gradlew run --args "add foobar"`
+   1. `./gradlew run --args "add foobar buzz"`
+   1. `./gradlew run --args "add 'foo bar'"`
+   1. `./gradlew run --args "add 'foo    bar'"`
+   1. `./gradlew run --args "add foobar 'foo   bar'"`
 1. 如无需传任何参数，请使用以下方式：
    1. `./gradlew run`
 1. 不允许修改 build.gradle 文件，如有特殊原因，请先跟 coach 进行沟通；
