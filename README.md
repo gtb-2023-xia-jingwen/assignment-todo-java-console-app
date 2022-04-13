@@ -37,8 +37,8 @@
 1. 不可以使用数据库，如需存储、读取数据，请使用 `$HOME/.todo/tasks`文件；
 1. 使用 Git 进行版本管理：
    1. 小步提交；
-   2. 使用合理的 commit message；
-   3. Commit message 格式需符合 [Conventional Commits](https://www.conventionalcommits.org/) ；
+   1. 使用合理的 commit message；
+   1. Commit message 格式需符合 [Conventional Commits](https://www.conventionalcommits.org/) ；
 1. 以下使用场景，它们不在目标考查范围内，你无需为它们做特别处理：
    1. 并发的使用场景，换言之，就是无需考虑是否有多个使用者和（/或）多处在同时运行某个 todo command；
    1. 不必为可创建的任务数量的上限做任何处理，即可以支持无限多的任务，直到 系统/机器 挂掉为止；（我们目前不会这样去 使用/测试 它）
@@ -47,10 +47,10 @@
 ## 提交要求
 
 1. 请在 coach 建议的完成时间内提交，提交时请确保录屏也已完成；
-2. 通过金数据表单提交 assignment，提交成功后会收到系统通知；
-3. 批改 assignment 会使用提交时间点所对应的版本，请务必在确认无误后再进行提交；
-5. 获取录屏的具体方式请写在 RECORDING.md 文件中，确保 buddy/coach 能够访问；
-6. 本次 assignment 录屏时长需在 **45** 分钟以内；
+1. 通过金数据表单提交 assignment，提交成功后会收到系统通知；
+1. 批改 assignment 会使用提交时间点所对应的版本，请务必在确认无误后再进行提交；
+1. 获取录屏的具体方式请写在 RECORDING.md 文件中，确保 buddy/coach 能够访问；
+1. 本次 assignment 录屏时长需在 **45** 分钟以内；
 
 ## 我应该学到什么？
 
@@ -58,7 +58,7 @@ Assignment 的目的是学以致用，在运用当前 step 所学的知识和技
 
 1. 使用 CLI git 完成本地的提交管理及与远端的各种同步操作；
 1. 在 Java 中 [如何](https://stackoverflow.com/a/586345) 获取用户的 $HOME 目录位置；
-1. 在 Java 中对文件路径进行操作推荐使用 [Path API](https://www.novixys.com/blog/java-path-api-tutorial/) ；
+1. 在 Java 中对文件路径进行操作，推荐使用 [Path API](https://www.novixys.com/blog/java-path-api-tutorial/) ；
 1. Java 的基础语法
    1. if/for 等控制语句
    1. 创建文件夹及文件
