@@ -6,7 +6,19 @@
 
 ## 需求说明
 
-整体需求跟 Step01 的 `assignment-todo-cli` 的是完全一样的，请自行参考。
+除实现 Step01 `assignment-todo-cli` 的需求外，此次 assignment 还需实现新命令 remove，需求描述如下
+
+### `remove` command
+
+用户通过该命令删除任务，示例如下：
+
+![image.png](./assets/remove-2022-04-21_22-37-47.jpg)
+
+删除任务的具体要求有：
+
+1. 需通过参数指定任务的 ID；
+2. 如果要一次性指定多个任务，任务 ID 之间以空格分隔；
+3. 指定的任务不存在时，无需输出任何提示，视为操作成功；
 
 结合上一次 assignment review 的大部分结果，**请务必注意**：
 
