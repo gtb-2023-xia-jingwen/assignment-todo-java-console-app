@@ -16,15 +16,19 @@
 ## 技术要求
 
 1. 在代码库的根目录下，可以通过以下方式运行你的 Java Console Application：
-   1. `./gradlew run --args "init"`
-   1. `./gradlew run --args "list"`
-   1. `./gradlew run --args "add foobar"`
-   1. `./gradlew run --args "add foobar buzz"`
-   1. `./gradlew run --args "add 'foo bar'"`
-   1. `./gradlew run --args "add 'foo    bar'"`
-   1. `./gradlew run --args "add foobar 'foo   bar'"`
+   ```
+   ./gradlew run --args "init"
+   ./gradlew run --args "list"
+   ./gradlew run --args "add foobar"
+   ./gradlew run --args "add foobar buzz"
+   ./gradlew run --args "add 'foo bar'"
+   ./gradlew run --args "add 'foo    bar'"
+   ./gradlew run --args "add foobar 'foo   bar'"
+   ```
 1. 如无需传任何参数，请使用以下方式：
-   1. `./gradlew run`
+   ```
+   ./gradlew run
+   ```
 1. 不允许修改 build.gradle 文件，如有特殊原因，请先跟 coach 进行沟通；
 1. 不允许以任何形式自行添加任何其它第三方依赖或库带代码库中；
 1. 如需在磁盘上保存任何数据，请确保符合以下要求：
