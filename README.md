@@ -75,12 +75,56 @@
 Assignment 的目的是学以致用，在运用当前 step 所学的知识和技能合理完成题目要求的前提下，你 应该/可能 会使用（但不限于）以下内容：
 
 1. 使用 CLI git 完成本地的提交管理及与远端的各种同步操作；
-1. 在 Java 中 [如何](https://stackoverflow.com/a/586345) 获取用户的 $HOME 目录位置；
-1. 在 Java 中对文件路径进行操作，推荐使用 [Path API](https://www.novixys.com/blog/java-path-api-tutorial/) ；
-1. Java 的基础语法
+2. 在 Java 中 [如何](https://stackoverflow.com/a/586345) 获取用户的 $HOME 目录位置；
+3. 在 Java 中对文件路径进行操作，推荐使用 [Path API](https://www.novixys.com/blog/java-path-api-tutorial/) ；
+4. Java 的基础语法
    1. if/for 等控制语句
    1. 创建文件夹及文件
    1. 文件读写（推荐使用 BufferedReader 和 BufferedWriter，这里是一个 [参考](https://www.youtube.com/watch?v=hgF21imQ_Is) ）
-1. 通过 Gradle 在 console 里运行一个 Java Application；
+5. 通过 Gradle 在 console 里运行一个 Java Application；
+
+## 评分标准
+
+Buddy 会根据以下指导规则对大家本次的 assignment 进行评级。
+
+**特别提醒：**
+
+本次 assignment 只是为了帮助大家了解自己的学习情况，不是为了考试评级，请大家不要有过多的心理负担。
+
+给出一个明确的评级指导规则，是为了一方面让 buddy 们尽量能够统一标准。另一方面，也让大家能够明确目标。
+
+对于初学者而言，能在学完当前 Step 后：
+
+* 做到 Level-1 👉🏻 不错喽
+* 做到 Level-2 👉🏻 很好
+* 做到 Level-3 👉🏻 Fantastic!
+
+### 功能实现
+
+主要判断对需求的实现程度，会分为四个级别：
+
+1. Level-0：无法达到 Level-1 时
+1. Level-1：能跑起来，可以使用最最简单的 1-2 个命令就算“能跑起来”
+1. Level-2：满足所有基本操作，能处理大部分常见的`正常和异常`使用场景
+1. Level-3：能够处理全部或绝大部分的异常场景；
+
+级别为递进关系，当前 Level 的所有测试必须全部通过，才能判定为达到该 Level。
+
+### 代码实现
+
+当前 assignment 不对代码实现做以下具体要求：
+
+1. 是否使用了 `~/.todo/tasks` 以外的文件来保存数据；
+
+关于该维度的其它方面，暂时不做过多具体要求。
+
+### 工程实践
+
+当前学习阶段主要关注以下工程实践，请在观看录屏后进行反馈：
+
+1. 根据视频判断是否是自己完成的，不是简单的记忆、模仿；
+1. 是否有在命令行使用 Git；
+1. 是否实践了小步提交，且 message 内容合理；
+1. 要保证 `./gradlew build` 是`干净的`，没有任何 warnings；
 
 **如果你在完成 assignment 后，发现以上的大部分内容都并未涉及（使用）到，请及时联系 coach 进行沟通。**
