@@ -31,13 +31,51 @@
 
 1. 在代码库的根目录下，可以通过以下方式运行你的 Java Console Application：
    ```
+   # 每一个 add 命令下方都给出了执行后再用 list 查看的结果，供大家详细了解具体的格式，如空格的数量和单引号是否存在等等
+
    ./gradlew run --args "init"
+
    ./gradlew run --args "list"
+
    ./gradlew run --args "add foobar"
+   # To be done
+   1 foobar
+   # Completed
+   Empty
+
    ./gradlew run --args "add foobar buzz"
+   # To be done
+   1 foobar
+   2 foobar buzz
+   # Completed
+   Empty
+
    ./gradlew run --args "add 'foo bar'"
+   # To be done
+   1 foobar
+   2 foobar buzz
+   3 foo bar
+   # Completed
+   Empty
+
    ./gradlew run --args "add 'foo    bar'"
+   # To be done
+   1 foobar
+   2 foobar buzz
+   3 foo bar
+   4 foo    bar
+   # Completed
+   Empty
+
    ./gradlew run --args "add foobar 'foo   bar'"
+   # To be done
+   1 foobar
+   2 foobar buzz
+   3 foo bar
+   4 foo    bar
+   5 foobar foo   bar
+   # Completed
+   Empty
    ```
 1. 如无需传任何参数，请使用以下方式：
    ```
