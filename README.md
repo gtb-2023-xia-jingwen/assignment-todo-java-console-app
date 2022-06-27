@@ -70,19 +70,6 @@
 1. 获取录屏的具体方式请写在 RECORDING.md 文件中，确保 buddy/coach 能够访问；
 1. 本次 assignment 录屏时长需在 **45** 分钟以内；
 
-## 我应该学到什么？
-
-Assignment 的目的是学以致用，在运用当前 step 所学的知识和技能合理完成题目要求的前提下，你 应该/可能 会使用（但不限于）以下内容：
-
-1. 使用 CLI git 完成本地的提交管理及与远端的各种同步操作；
-2. 在 Java 中 [如何](https://stackoverflow.com/a/586345) 获取用户的 $HOME 目录位置；
-3. 在 Java 中对文件路径进行操作，推荐使用 [Path API](https://www.novixys.com/blog/java-path-api-tutorial/) ；
-4. Java 的基础语法
-   1. if/for 等控制语句
-   1. 创建文件夹及文件
-   1. 文件读写（推荐使用 BufferedReader 和 BufferedWriter，这里是一个 [参考](https://www.youtube.com/watch?v=hgF21imQ_Is) ）
-5. 通过 Gradle 在 console 里运行一个 Java Application；
-
 ## 评分标准
 
 Buddy 会根据以下指导规则对大家本次的 assignment 进行评级。
@@ -126,5 +113,18 @@ Buddy 会根据以下指导规则对大家本次的 assignment 进行评级。
 1. 是否有在命令行使用 Git；
 1. 是否实践了小步提交，且 message 内容合理；
 1. 要保证 `./gradlew build` 是`干净的`，没有任何 warnings；
+
+## 我应该学到什么？
+
+Assignment 的目的是学以致用，在运用当前 step 所学的知识和技能合理完成题目要求的前提下，你 应该/可能 会使用（但不限于）以下内容：
+
+1. 使用 CLI git 完成本地的提交管理及与远端的各种同步操作；
+2. 在 Java 中 [如何](https://stackoverflow.com/a/586345) 获取用户的 $HOME 目录位置；
+3. 在 Java 中对文件路径进行操作，推荐使用 [Path API](https://www.novixys.com/blog/java-path-api-tutorial/) ；
+4. Java 的基础语法
+   1. if/for 等控制语句
+   1. 创建文件夹及文件
+   1. 文件读写（推荐使用 BufferedReader 和 BufferedWriter，这里是一个 [参考](https://www.youtube.com/watch?v=hgF21imQ_Is) ）
+5. 通过 Gradle 在 console 里运行一个 Java Application；
 
 **如果你在完成 assignment 后，发现以上的大部分内容都并未涉及（使用）到，请及时联系 coach 进行沟通。**
