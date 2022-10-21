@@ -2,9 +2,14 @@ package tw.cn.cap.gtb.todo;
 
 import java.io.*;
 import java.lang.reflect.Field;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class App {
@@ -52,6 +57,18 @@ public class App {
         list();
     }
 
+    public void mark(List<Integer> numbers) throws IOException {
+        Path path = Paths.get(TASK_FILE);
+        List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+        for (int mn : numbers) {
+            int idx = mn - 1;
+            if (idx < 0 || idx >= lines.size()) continue; // out of index bound
+            String line = lines.get(idx);
+            if (line.charAt(0) >= '1' && line.charAt(0) <= '9') lines.set(idx, "x" + line);
+        }
+        Files.write(path, lines, StandardCharsets.UTF_8);
+    }
+
     public static void main(String[] args) throws IOException {
         App app = new App();
         String cmd = args[0];
@@ -68,7 +85,20 @@ public class App {
             }else if (cmd.equals("add")) {
                 String title = Arrays.stream(args).skip(1).collect(Collectors.joining(" "));
                 app.add(title);
+            } else if (cmd.equals("mark")) {
+                Predicate<String> isNumber = App::checkIsNumber;
+                List<Integer> numbers = Arrays.stream(args).skip(1).filter(isNumber).map(Integer::parseInt).collect(Collectors.toList());
+                app.mark(numbers);
             }
         }
+    }
+    public static boolean checkIsNumber(String s) {
+        boolean res = true;
+        try {
+            Integer.parseInt(s);
+        }catch (NumberFormatException e) {
+            res = false;
+        }
+        return res;
     }
 }
