@@ -22,6 +22,12 @@ public class App {
         String cmd = args[0];
         if (cmd.equals("init")) {
             app.init();
+        } else {
+            File taskFile = new File(TASK_FILE);
+            if (!taskFile.exists()) {
+                System.out.printf("Please run 'todo init' before running '%s' command.", cmd);
+                return;
+            }
         }
     }
 }
