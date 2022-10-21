@@ -81,6 +81,7 @@ public class App {
     }
 
     public static void main(String[] args) throws IOException {
+        if (args.length == 0) return;
         App app = new App();
         String cmd = args[0];
         if (cmd.equals("init")) {
