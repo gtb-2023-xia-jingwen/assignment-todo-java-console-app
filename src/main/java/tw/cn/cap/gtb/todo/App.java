@@ -62,8 +62,8 @@ public class App {
     }
 
     // remove task: -1 download paper
-    public void remove(List<Integer> numbers) {
-
+    public void remove(List<Integer> numbers) throws IOException {
+        modify("remove", numbers);
     }
 
     private void modify(String cmd, List<Integer> numbers) throws IOException {
@@ -75,7 +75,7 @@ public class App {
             if (idx < 0 || idx >= lines.size()) continue; // out of index bound
             String line = lines.get(idx);
             if (line.charAt(0) >= '1' && line.charAt(0) <= '9') lines.set(idx, repStr + line);
-            if (line.charAt(0) == 'x') lines.set(idx, line.replaceFirst("x", "-"));
+            if (cmd.equals("remove") && line.charAt(0) == 'x') lines.set(idx, line.replaceFirst("x", "-"));
         }
         Files.write(path, lines, StandardCharsets.UTF_8);
     }
@@ -96,10 +96,11 @@ public class App {
             }else if (cmd.equals("add")) {
                 String title = Arrays.stream(args).skip(1).collect(Collectors.joining(" "));
                 app.add(title);
-            } else if (cmd.equals("mark")) {
+            } else if (cmd.equals("remove") || cmd.equals("mark")) {
                 Predicate<String> isNumber = App::checkIsNumber;
                 List<Integer> numbers = Arrays.stream(args).skip(1).filter(isNumber).map(Integer::parseInt).collect(Collectors.toList());
-                app.mark(numbers);
+                if (cmd.equals("mark")) app.mark(numbers);
+                if (cmd.equals("remove")) app.remove(numbers);
             }
         }
     }
