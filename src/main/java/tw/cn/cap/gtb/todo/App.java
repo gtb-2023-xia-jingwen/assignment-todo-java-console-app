@@ -3,7 +3,9 @@ package tw.cn.cap.gtb.todo;
 import java.io.*;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class App {
     static final String HOME = System.getProperty("user.home");
@@ -37,6 +39,19 @@ public class App {
         }
     }
 
+    public void add(String title) throws IOException {
+        // get last task number
+        LineNumberReader reader = new LineNumberReader(new FileReader(TASK_FILE));
+        reader.skip(Long.MAX_VALUE);
+        int lastNumber = reader.getLineNumber();
+        int curNumber = lastNumber + 1;
+        BufferedWriter bw = new BufferedWriter(new FileWriter(TASK_FILE, true)); // append mode
+        bw.write(curNumber + " " + title);
+        bw.newLine();
+        bw.close();
+        list();
+    }
+
     public static void main(String[] args) throws IOException {
         App app = new App();
         String cmd = args[0];
@@ -50,6 +65,9 @@ public class App {
             }
             if (cmd.equals("list")) {
                 app.list();
+            }else if (cmd.equals("add")) {
+                String title = Arrays.stream(args).skip(1).collect(Collectors.joining(" "));
+                app.add(title);
             }
         }
     }
