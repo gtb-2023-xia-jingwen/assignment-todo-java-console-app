@@ -58,13 +58,24 @@ public class App {
     }
 
     public void mark(List<Integer> numbers) throws IOException {
+        modify("mark", numbers);
+    }
+
+    // remove task: -1 download paper
+    public void remove(List<Integer> numbers) {
+
+    }
+
+    private void modify(String cmd, List<Integer> numbers) throws IOException {
+        String repStr = cmd.equals("mark") ? "x" : "-";
         Path path = Paths.get(TASK_FILE);
         List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
         for (int mn : numbers) {
             int idx = mn - 1;
             if (idx < 0 || idx >= lines.size()) continue; // out of index bound
             String line = lines.get(idx);
-            if (line.charAt(0) >= '1' && line.charAt(0) <= '9') lines.set(idx, "x" + line);
+            if (line.charAt(0) >= '1' && line.charAt(0) <= '9') lines.set(idx, repStr + line);
+            if (line.charAt(0) == 'x') lines.set(idx, line.replaceFirst("x", "-"));
         }
         Files.write(path, lines, StandardCharsets.UTF_8);
     }
