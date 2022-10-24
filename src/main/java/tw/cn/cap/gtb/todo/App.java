@@ -52,7 +52,6 @@ public class App {
         bw.write(curNumber + " " + title);
         bw.newLine();
         bw.close();
-        list();
     }
 
     public void mark(List<Integer> numbers) throws IOException {
