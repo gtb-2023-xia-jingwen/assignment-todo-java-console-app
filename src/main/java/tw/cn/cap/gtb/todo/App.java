@@ -1,7 +1,6 @@
 package tw.cn.cap.gtb.todo;
 
 import java.io.*;
-import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -19,9 +18,15 @@ public class App {
 
     public void init() throws IOException {
         File taskDir = new File(TASK_DIR);
-        if (!taskDir.exists()) taskDir.mkdirs();
+        if (!taskDir.exists()) {
+            taskDir.mkdirs();
+        }
+
         File taskFile = new File(TASK_FILE);
-        if (!taskFile.exists()) taskFile.createNewFile();
+        if (!taskFile.exists()) {
+
+            taskFile.createNewFile();
+        }
         System.out.println("Initialized successfully.");
     }
 
@@ -31,15 +36,25 @@ public class App {
         List<String> doneList = new ArrayList<>();
         String line = null;
         while ((line = br.readLine()) != null) {
-            if (line.charAt(0) >= '1' && line.charAt(0) <= '9') tbdList.add(line);
-            if (line.charAt(0) == 'x') doneList.add(line.substring(1));
+            if (line.charAt(0) >= '1' && line.charAt(0) <= '9') {
+                tbdList.add(line);
+            }
+            if (line.charAt(0) == 'x') {
+                doneList.add(line.substring(1));
+            }
         }
         System.out.println("# To be done");
-        if (!tbdList.isEmpty()) tbdList.forEach(System.out::println);
-        else System.out.println("Empty");
+        if (!tbdList.isEmpty()) {
+            tbdList.forEach(System.out::println);
+        } else {
+            System.out.println("Empty");
+        }
         System.out.println("# Completed");
-        if (!doneList.isEmpty()) doneList.forEach(System.out::println);
-        else System.out.println("Empty");
+        if (!doneList.isEmpty()) {
+            doneList.forEach(System.out::println);
+        } else {
+            System.out.println("Empty");
+        }
     }
 
     public void add(String title) throws IOException {
@@ -86,12 +101,15 @@ public class App {
         } else {
             File taskFile = new File(TASK_FILE);
             if (!taskFile.exists()) {
-                System.out.printf("Please run 'todo init' before running '%s' command.", cmd);
+                System.out.printf("Please run 'todo init' before running '%s' command.\n", cmd);
                 return;
             }
+
+            // could be replaced with switch statement.
+
             if (cmd.equals("list")) {
                 app.list();
-            }else if (cmd.equals("add")) {
+            } else if (cmd.equals("add")) {
                 String title = Arrays.stream(args).skip(1).collect(Collectors.joining(" "));
                 app.add(title);
             } else if (cmd.equals("remove") || cmd.equals("mark")) {
@@ -102,11 +120,12 @@ public class App {
             }
         }
     }
+
     public static boolean checkIsNumber(String s) {
         boolean res = true;
         try {
             Integer.parseInt(s);
-        }catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             res = false;
         }
         return res;
