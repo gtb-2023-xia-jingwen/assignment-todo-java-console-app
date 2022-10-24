@@ -34,14 +34,12 @@ public class App {
             if (line.charAt(0) >= '1' && line.charAt(0) <= '9') tbdList.add(line);
             if (line.charAt(0) == 'x') doneList.add(line.substring(1));
         }
-        if (!tbdList.isEmpty() || !doneList.isEmpty()) {
-            System.out.println("# To be done");
-            if (!tbdList.isEmpty()) tbdList.forEach(System.out::println);
-            else System.out.println("Empty");
-            System.out.println("# Completed");
-            if (!doneList.isEmpty()) doneList.forEach(System.out::println);
-            else System.out.println("Empty");
-        }
+        System.out.println("# To be done");
+        if (!tbdList.isEmpty()) tbdList.forEach(System.out::println);
+        else System.out.println("Empty");
+        System.out.println("# Completed");
+        if (!doneList.isEmpty()) doneList.forEach(System.out::println);
+        else System.out.println("Empty");
     }
 
     public void add(String title) throws IOException {
