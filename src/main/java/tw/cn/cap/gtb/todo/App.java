@@ -107,16 +107,21 @@ public class App {
 
             // could be replaced with switch statement.
 
-            if (cmd.equals("list")) {
-                app.list();
-            } else if (cmd.equals("add")) {
-                String title = Arrays.stream(args).skip(1).collect(Collectors.joining(" "));
-                app.add(title);
-            } else if (cmd.equals("remove") || cmd.equals("mark")) {
-                Predicate<String> isNumber = App::checkIsNumber;
-                List<Integer> numbers = Arrays.stream(args).skip(1).filter(isNumber).map(Integer::parseInt).collect(Collectors.toList());
-                if (cmd.equals("mark")) app.mark(numbers);
-                if (cmd.equals("remove")) app.remove(numbers);
+            switch (cmd) {
+                case "list":
+                    app.list();
+                    break;
+                case "add":
+                    String title = Arrays.stream(args).skip(1).collect(Collectors.joining(" "));
+                    app.add(title);
+                    break;
+                case "remove":
+                case "mark":
+                    Predicate<String> isNumber = App::checkIsNumber;
+                    List<Integer> numbers = Arrays.stream(args).skip(1).filter(isNumber).map(Integer::parseInt).collect(Collectors.toList());
+                    if (cmd.equals("mark")) app.mark(numbers);
+                    if (cmd.equals("remove")) app.remove(numbers);
+                    break;
             }
         }
     }
